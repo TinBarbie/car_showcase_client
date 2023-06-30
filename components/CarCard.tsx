@@ -17,9 +17,7 @@ const CarCard = ({ car }: CarCardProps) => {
   const { city_mpg, year, make, model, transmission, drive } = car;
 
   const [isOpen, setIsOpen] = useState(false);
-
-  const imaginApiKey = process.env.NEXT_PUBLIC_IMAGIN_API_KEY;
-
+  
   function closeModal() {
     setIsOpen(false);
   }
@@ -55,7 +53,7 @@ const CarCard = ({ car }: CarCardProps) => {
 
       <div className="car-card__image">
         <Image
-          src={`https://cdn.imagin.studio/getimage?customer=${imaginApiKey}&make=${make}&modelFamily=${
+          src={`https://cdn.imagin.studio/getimage?customer=hrjavascript-mastery&make=${make}&modelFamily=${
             model.split(" ")[0]
           }&zoomType=fullscreen&modelYear=${year}`}
           alt="car model"
